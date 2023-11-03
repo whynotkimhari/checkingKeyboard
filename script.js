@@ -1,8 +1,9 @@
+const TEXT = 'CHECKING KEYBOARD'
 var keys = Array.from(document.querySelectorAll('.cell'));
 
 function play(e) {
     var keys = document.querySelectorAll(`div[data-key="${e.keyCode}"]`);
-    keys.forEach((key) => {
+    keys.forEach(key => {
         if(!key.classList.contains("checked")) {
             key.classList.add("checked");
         }
@@ -16,3 +17,6 @@ function play(e) {
 }
 
 window.addEventListener("keydown", play);
+document.querySelector('body').addEventListener('click', () => {
+    document.querySelector('h1').textContent = TEXT
+})
